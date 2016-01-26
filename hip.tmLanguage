@@ -1,0 +1,53 @@
+{
+    "fileTypes": [
+        "cu",
+        "cuh",
+        "h",
+        "cpp",
+        "c",
+        "hpp"
+    ],
+    "firstLineMatch": "-\\*- C\\+\\+ -\\*-",
+    "foldingStartMarker": "(?x)\n\t\t /\\*\\*(?!\\*)\n\t\t|^(?![^{]*?//|[^{]*?/\\*(?!.*?\\*/.*?\\{)).*?\\{\\s*($|//|/\\*(?!.*?\\*/.*\\S))\n\t",
+    "foldingStopMarker": "(?<!\\*)\\*\\*/|^\\s*\\}",
+    "keyEquivalent": "^~C",
+    "name": "HIP",
+    "scopeName": "source.hip",
+    "patterns": [
+        {
+            "include": "source.c++"
+        },
+        {
+            "comment": "Function Qualifier",
+            "match": "\\b__(global)__\\b",
+            "name": "keyword.function.qualifier"
+        },
+        {
+            "comment": "HIP Data Type",
+            "match": "\\b(hipLaunchParm|hipDeviceProp_t|hipEvent_t|hipStream_t)\\b",
+            "name": "support.type"
+        },
+        {
+            "comment": "HIP Data Value",
+            "match": "\\b(hipSuccess|hipErrorMemoryAllocation|hipErrorUnknown)\\b",
+            "name": "storage.modifier"
+        },
+        {
+            "comment": "HIP Memory Flags",
+            "match": "\\b(hipMemcpyHostToDevice|hipMemcpyDeviceToHost)\\b",
+            "name": "storage.modifier"
+        },
+        {
+            "comment": "HIP Data Type",
+            "match": "\\b(char|uchar|short|ushort|int|uint|long|ulong|longlong|ulonglong|float|double)(1|2|3|4)\\b",
+            "name": "support.type"
+        },
+        {
+            "comment": "HIP Work Items",
+            "match": "\\b(hipGridDim|hipBlockIdx|hipBlockDim|hipThreadIdx|warpSize)_(x|y|z)\\b",
+            "name": "variable.language"
+        }
+    ],
+    "repository": {
+    }
+}
